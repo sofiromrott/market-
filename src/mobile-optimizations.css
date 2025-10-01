@@ -1,0 +1,264 @@
+/* Touch-friendly styles for mobile devices */
+/* Add these styles to improve touch interaction */
+
+/* Touch targets should be at least 44px */
+@media (max-width: 768px) {
+  .btn,
+  .nav-link,
+  .mobile-menu-btn,
+  .quantity-btn,
+  .remove-btn,
+  .add-to-cart-btn,
+  .category-filter,
+  .filter-toggle,
+  .clear-filters,
+  .action-btn,
+  .mobile-search-btn,
+  .mobile-cart-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve touch feedback */
+  .btn:active,
+  .nav-link:active,
+  .mobile-menu-btn:active,
+  .quantity-btn:active,
+  .remove-btn:active,
+  .add-to-cart-btn:active,
+  .category-filter:active,
+  .filter-toggle:active,
+  .clear-filters:active,
+  .action-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  /* Prevent text selection on buttons */
+  .btn,
+  .nav-link,
+  .mobile-menu-btn,
+  .quantity-btn,
+  .remove-btn,
+  .add-to-cart-btn,
+  .category-filter,
+  .filter-toggle,
+  .clear-filters,
+  .action-btn {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Improve scrolling performance */
+  .home,
+  .products-page,
+  .cart-page,
+  .checkout-page,
+  .product-detail-page {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  /* Prevent zoom on input focus */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  /* Improve form usability */
+  .input:focus {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /* Better spacing for touch */
+  .products-grid {
+    gap: 1rem;
+  }
+
+  .cart-item,
+  .order-item {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Improve modal/overlay interactions */
+  .nav-mobile {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Better visual feedback for interactive elements */
+  .product-card:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  /* Improve readability on small screens */
+  .hero-title,
+  .section-title,
+  .page-title,
+  .cart-title,
+  .checkout-title,
+  .product-title {
+    line-height: 1.2;
+  }
+
+  /* Better contrast for small text */
+  .product-category,
+  .cart-item-category,
+  .item-quantity,
+  .testimonial-author span {
+    font-weight: 500;
+  }
+
+  /* Improve card interactions */
+  .product-card,
+  .feature-card,
+  .testimonial-card {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .product-card:active,
+  .feature-card:active,
+  .testimonial-card:active {
+    transform: scale(0.98);
+  }
+
+  /* Better button spacing */
+  .hero-actions,
+  .summary-actions,
+  .product-actions-main {
+    gap: 0.75rem;
+  }
+
+  /* Improve form spacing */
+  .form-row {
+    gap: 0.75rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Specific improvements for very small screens */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .btn-xl {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Reduce padding on small screens */
+  .hero {
+    padding: 1rem 0;
+  }
+
+  .features,
+  .featured-products,
+  .best-sellers,
+  .testimonials {
+    padding: 1.5rem 0;
+  }
+
+  /* Improve grid spacing */
+  .products-grid {
+    gap: 0.75rem;
+  }
+
+  .features-grid {
+    gap: 1rem;
+  }
+}
+
+/* Landscape orientation optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero {
+    padding: 1rem 0;
+  }
+
+  .hero-content {
+    gap: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Reduce vertical spacing in landscape */
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .product-image img,
+  .cart-item-image img,
+  .order-item img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  /* Future dark mode styles can be added here */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
